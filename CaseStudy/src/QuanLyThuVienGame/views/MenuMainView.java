@@ -11,14 +11,14 @@ public class MenuMainView {
             try {
                 String menuAdmin = """
                         ______________________________
-                        1. Xem danh sách thư viện game
-                        2. Thêm game
-                        3. Cập nhật
-                        4. Xóa game
-                        5. Sắp xếp
-                        6. Tìm game theo tên
-                        7. Thông tin tài khoản
-                        0. Thoát
+                        1. Xem danh sách thư viện game.
+                        2. Thêm game.
+                        3. Cập nhật.
+                        4. Xóa game.
+                        5. Sắp xếp.
+                        6. Tìm game theo tên.
+                        7. Thông tin tài khoản.
+                        0. Đăng xuất.
                                            
                          Nhập số để chọn:
                         """;
@@ -40,7 +40,7 @@ public class MenuMainView {
                          3. Tìm game theo tên.
                          4. Chơi thử(Coming soon).
                          
-                         0. Thoát
+                         0. Đăng xuất.
                          """;
                 System.out.println(menuUser);
                 return Integer.parseInt(scanner.nextLine());

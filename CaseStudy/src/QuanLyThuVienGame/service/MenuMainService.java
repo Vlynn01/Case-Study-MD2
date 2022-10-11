@@ -26,9 +26,12 @@ public class MenuMainService {
 
     //Tạo danh sách
     {
-        games.add(new Game("FIFA 22", "Thể thao","44gb", 2021, "EA", 990));
-        games.add(new Game("NBA 2K222", "Thể thao","118gb", 2021, "2K", 1000));
-        gameReadAndWrite.write(games,"E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\game.csv" );
+        games.add(new Game("NARAKA: BLADEPOINT", "Sinh tồn", "36gb", 2021, "NetEase", 360));
+        games.add(new Game("Cyberpunk 2077", "Hành động", "67gb", 2020, "CD PROJEKT RED", 990));
+        games.add(new Game("The crew 2", "Đua xe", "56gb", 2018, "Ubisoft", 825));
+        games.add(new Game("FIFA 22", "Thể thao", "44gb", 2021, "EA", 990));
+        games.add(new Game("NBA 2K222", "Thể thao", "118gb", 2021, "2K", 1000));
+        gameReadAndWrite.write(games, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\game.csv");
     }
 
 
@@ -170,9 +173,10 @@ public class MenuMainService {
         System.out.println("Nhập tên game muốn tìm");
         String name = scanner.nextLine();
         for (Game game : games) {
-            if (game.getTen().equals(name)) {
+            if (game.getTen().contains(name)) {
                 System.out.println(game);
             }
         }
     }
 }
+

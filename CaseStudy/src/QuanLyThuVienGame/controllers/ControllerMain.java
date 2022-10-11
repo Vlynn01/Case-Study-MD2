@@ -35,7 +35,7 @@ public class ControllerMain {
 
     public void choiceLogin() {
 //        Tài khoản admin
-//        Account admin = new Account("Admin", "Admin01", "VanLuan", "admin", "vlynn00@yahoo.com");
+//        Account admin = new Account("Admin", "Admin", "VanLuan", "admin", "vlynn00@yahoo.com");
 //        controllerLogin.accountService.addAccount(admin);
 
 
@@ -68,14 +68,11 @@ public class ControllerMain {
                         case 7:
                             controllerAccount.choiceAccount();
                             break;
-                        case 8: {
-                            controllerAccount.accountService.upRight(controllerAccount.accountService.findIndex());
-                            accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
-                        }
-                        case 0:
-                            System.out.println("Back menu!");
-                            break;
-                        case 9: {
+//                        case 8: {
+//                            controllerAccount.accountService.upRight(controllerAccount.accountService.findIndex());
+//                            accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
+//                        }
+                        case 0: {
                             System.out.println("Đăng xuất ! Bye " + AccountService.account.getName());
                             accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
                         }
@@ -88,19 +85,15 @@ public class ControllerMain {
                     System.out.println("Hello " + AccountService.account.getName() + "!!");
                     choice = controllerMenu.menuMainView.menuUser();
                     switch (choice) {
-                        case 1:
-                            MenuMainService.show();
-                            break;
-                        case 2:
-                            MenuMainService.sort();
-                            break;
-                        case 3:
-                            MenuMainService.SearchByName();
-                            break;
-                        case 0:
+                        case 1 -> MenuMainService.show();
+                        case 2 -> MenuMainService.sort();
+                        case 3 -> MenuMainService.SearchByName();
+                        case 0 -> {
+                            System.out.println("Đăng xuất ! Bye " + AccountService.account.getName());
+                            accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
                             return;
-                        default:
-                            System.out.println("Chọn lại");
+                        }
+                        default -> System.out.println("Chọn lại");
                     }
                 }
             }

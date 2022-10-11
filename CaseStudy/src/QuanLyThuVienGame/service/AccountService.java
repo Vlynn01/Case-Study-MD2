@@ -51,7 +51,7 @@ public class AccountService {
         System.out.println("Nhập tên: (Tên phải có ít nhất 1 chữ cái viết hoa và không có số) ");
         String name = Validate.validateString(Validate.REGEX_STRING);
         while (true) {
-            System.out.println("Nhập tài khoản: (Tên tài khoản phải có 6-10 chữ cái bao gồm các chữ cái và số)");
+            System.out.println("Nhập tài khoản: (Tên tài khoản phải có 6-10 chữ hoặc số)");
             user = Validate.validateString(Validate.REGEX_ACCOUNT);
             if (checkUserName(user)) {
                 break;
