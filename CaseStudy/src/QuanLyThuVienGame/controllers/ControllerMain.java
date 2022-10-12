@@ -42,6 +42,7 @@ public class ControllerMain {
         if (controllerLogin.accountService.login()) {
             System.out.println("Đăng nhập thành công!");
             int choice = -1;
+            //Admin
             if (AccountService.account.getRights().equals("admin")) {
                 while (choice != 0) {
                     System.out.println("Hello " + AccountService.account.getName() + "!!");
@@ -68,10 +69,6 @@ public class ControllerMain {
                         case 7:
                             controllerAccount.choiceAccount();
                             break;
-//                        case 8: {
-//                            controllerAccount.accountService.upRight(controllerAccount.accountService.findIndex());
-//                            accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
-//                        }
                         case 0: {
                             System.out.println("Đăng xuất ! Bye " + AccountService.account.getName());
                             accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");
@@ -81,6 +78,7 @@ public class ControllerMain {
                     }
                 }
             } else {
+                //User
                 while (true) {
                     System.out.println("Hello " + AccountService.account.getName() + "!!");
                     choice = controllerMenu.menuMainView.menuUser();
@@ -88,6 +86,8 @@ public class ControllerMain {
                         case 1 -> MenuMainService.show();
                         case 2 -> MenuMainService.sort();
                         case 3 -> MenuMainService.SearchByName();
+//                        case 4 -> ;
+
                         case 0 -> {
                             System.out.println("Đăng xuất ! Bye " + AccountService.account.getName());
                             accountReadAndWrite.write(AccountService.accounts, "E:\\Java\\CaseStudy\\src\\QuanLyThuVienGame\\file_text\\account.csv");

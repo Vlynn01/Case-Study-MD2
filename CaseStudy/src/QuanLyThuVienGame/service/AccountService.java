@@ -31,7 +31,7 @@ public class AccountService {
 
     //Đăng nhập
     public boolean login() {
-        System.out.println("Nhập tài khoản: (Tên tài khoản phải có 6-10 chữ cái bao gồm các chữ cái và số)");
+        System.out.println("Nhập tài khoản: (Tên tài khoản phải có 5-10 chữ cái bao gồm các chữ cái hoặc số)");
         String user = Validate.validateString(Validate.REGEX_ACCOUNT);
         System.out.println("Nhập mật khẩu : (Mật khẩu phải có 6-10 chữ cái bao gồm các chữ cái và số)");
         String pass = Validate.validateString(Validate.REGEX_ACCOUNT);
@@ -131,12 +131,4 @@ public class AccountService {
         } else System.out.println("This account not exist");
     }
 
-    //Quyền
-    public void upRight(int index) {
-        if (index != -1) {
-            if (accounts.get(index).getRights().equals("admin")) {
-                accounts.get(index).setRights("user");
-            } else accounts.get(index).setRights("admin");
-        } else System.out.println("This account not exist");
-    }
 }
